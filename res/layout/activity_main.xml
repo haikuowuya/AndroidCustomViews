@@ -1,13 +1,24 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp" >
 
     <com.michaelpardo.androidcustomviews.widget.MarqueeTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ellipsize="marquee"
         android:singleLine="true"
-        android:text="@string/hipster_ipsum" />
+        android:text="@string/hipster_ipsum_text" />
 
-</RelativeLayout>
+    <com.michaelpardo.androidcustomviews.widget.TitledTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="@string/hipster_ipsum_text"
+        android:title="@string/hipster_ipsum_title" />
+
+</LinearLayout>

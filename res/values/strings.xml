@@ -3,6 +3,7 @@
 
     <string name="app_name">AndroidCustomViews</string>
     <string name="menu_settings">Settings</string>
-    <string name="hipster_ipsum">Sustainable dreamcatcher scenester, plaid farm-to-table readymade aesthetic banjo small batch deep v freegan vice cardigan bespoke. Carles vinyl helvetica mustache, shoreditch stumptown seitan post-ironic fanny pack. </string>
+    <string name="hipster_ipsum_title">Hipster Ipsum</string>
+    <string name="hipster_ipsum_text">Sustainable dreamcatcher scenester, plaid farm-to-table readymade aesthetic banjo small batch deep v freegan vice cardigan bespoke. Carles vinyl helvetica mustache, shoreditch stumptown seitan post-ironic fanny pack. </string>
 
 </resources>
