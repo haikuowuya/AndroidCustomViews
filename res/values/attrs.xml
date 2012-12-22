@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Titled TextView -->
     <declare-styleable name="TitledTextView">
         <attr name="android:title" />
+        <attr name="android:text" />
+    </declare-styleable>
+
+    <!-- Quote TextView -->
+    <declare-styleable name="QuoteTextView">
         <attr name="android:text" />
     </declare-styleable>
 

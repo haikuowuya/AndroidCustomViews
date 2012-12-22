@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class TitledTextView extends LinearLayout {
 	private TextView mTitleTextView;
-	private TextView mTextTextView;
+	private TextView mBodyTextView;
 
 	public TitledTextView(Context context) {
 		this(context, null);
@@ -33,9 +33,9 @@ public class TitledTextView extends LinearLayout {
 		mTitleTextView.setTypeface(Typeface.DEFAULT_BOLD);
 		addView(mTitleTextView, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 
-		mTextTextView = new TextView(context);
-		mTextTextView.setText(text);
-		addView(mTextTextView, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		mBodyTextView = new TextView(context);
+		mBodyTextView.setText(text);
+		addView(mBodyTextView, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 	}
 
 	public void setTitle(String title) {
@@ -43,6 +43,6 @@ public class TitledTextView extends LinearLayout {
 	}
 
 	public void setText(String text) {
-		mTextTextView.setText(text);
+		mBodyTextView.setText(text);
 	}
 }

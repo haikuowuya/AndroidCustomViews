@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">AndroidCustomViews</string>
-    <string name="hipster_ipsum_title">Hipster Ipsum</string>
-    <string name="hipster_ipsum_text">Sustainable dreamcatcher scenester, plaid farm-to-table readymade aesthetic banjo small batch deep v freegan vice cardigan bespoke. Carles vinyl helvetica mustache, shoreditch stumptown seitan post-ironic fanny pack. </string>
+    <string name="poem_title">Hamlet (III, i, 65-68)</string>
+    <string name="poem_text">Shall I compare thee to a summer’s day? Thou art more lovely and more temperate: Rough winds do shake the darling buds of May, And summer’s lease hath all too short a date.</string>
 
 </resources>
