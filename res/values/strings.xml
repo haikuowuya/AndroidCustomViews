@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">AndroidCustomViews</string>
-    <string name="poem_title">Hamlet (III, i, 65-68)</string>
-    <string name="poem_text">Shall I compare thee to a summer’s day? Thou art more lovely and more temperate: Rough winds do shake the darling buds of May, And summer’s lease hath all too short a date.</string>
+    <string name="poem_title">Dust of Snow</string>
+    <string name="poem_text">The way a crow, Shook down on me, The dust of snow, From a hemlock tree, Has given my heart, A change of mood, And saved some part, Of a day I had rued.</string>
 
 </resources>
