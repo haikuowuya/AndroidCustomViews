@@ -4,6 +4,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-8dp"
+        android:height="36dp"
         android:includeFontPadding="false"
         android:text="“"
         android:textColor="#11000000"
@@ -15,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/body_text_view"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="-8dp"
+        android:height="36dp"
         android:includeFontPadding="false"
         android:text="”"
         android:textColor="#11000000"
