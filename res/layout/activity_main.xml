@@ -1,42 +1,61 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp" >
+    android:layout_height="match_parent" >
 
-    <com.michaelpardo.androidcustomviews.widget.MarqueeTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:singleLine="true"
-        android:text="@string/poem_text" />
-
-    <View
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#11000000" />
-
-    <com.michaelpardo.androidcustomviews.widget.TitledTextView
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:singleLine="true"
-        android:text="@string/poem_text"
-        android:title="@string/poem_title" />
+        android:orientation="vertical"
+        android:padding="8dp" >
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#11000000" />
+        <com.michaelpardo.androidcustomviews.widget.MarqueeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="@string/poem_text" />
 
-    <com.michaelpardo.androidcustomviews.widget.QuoteTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/poem_text" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#11000000" />
 
-</LinearLayout>
+        <com.michaelpardo.androidcustomviews.widget.TitledTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="@string/poem_text"
+            android:title="@string/poem_title" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#11000000" />
+
+        <com.michaelpardo.androidcustomviews.widget.QuoteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/poem_text" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#11000000" />
+
+        <com.michaelpardo.androidcustomviews.widget.MeasuringTapeView
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="#F7CA26" />
+    </LinearLayout>
+
+</ScrollView>
