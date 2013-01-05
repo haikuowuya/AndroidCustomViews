@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-8dp"
-        android:height="36dp"
-        android:includeFontPadding="false"
-        android:text="“"
-        android:textColor="#11000000"
-        android:textSize="72dp"
-        android:textStyle="bold" />
+        android:src="@drawable/bg_quote_open" />
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/body_text_view"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="-8dp"
-        android:height="36dp"
-        android:includeFontPadding="false"
-        android:text="”"
-        android:textColor="#11000000"
-        android:textSize="72dp"
-        android:textStyle="bold" />
+        android:src="@drawable/bg_quote_closed" />
 
     <TextView
         android:id="@+id/body_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp" />
+        android:padding="8dp" />
 
 </merge>
