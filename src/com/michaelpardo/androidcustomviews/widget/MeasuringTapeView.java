@@ -58,22 +58,6 @@ public class MeasuringTapeView extends View {
 	}
 
 	@Override
-	public boolean onTouchEvent(MotionEvent event) {
-		if (event.getAction() == MotionEvent.ACTION_DOWN) {
-			mIsTouching = true;
-		}
-		else if (event.getAction() == MotionEvent.ACTION_UP) {
-			mIsTouching = false;
-		}
-
-		mMarkerX = Math.max(0, (int) event.getX());
-
-		invalidate();
-
-		return true;
-	}
-
-	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 
@@ -105,5 +89,21 @@ public class MeasuringTapeView extends View {
 			canvas.drawLine(mMarkerX, 0, mMarkerX, mHeight, mMarkerPaint);
 			canvas.drawText(text, mMarkerX, -mMarkerPaint.ascent(), mMarkerPaint);
 		}
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if (event.getAction() == MotionEvent.ACTION_DOWN) {
+			mIsTouching = true;
+		}
+		else if (event.getAction() == MotionEvent.ACTION_UP) {
+			mIsTouching = false;
+		}
+
+		mMarkerX = Math.max(0, (int) event.getX());
+
+		invalidate();
+
+		return true;
 	}
 }
