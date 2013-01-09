@@ -28,8 +28,6 @@
         <com.michaelpardo.androidcustomviews.widget.TitledTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="marquee"
-            android:singleLine="true"
             android:text="@string/poem_text"
             android:title="@string/poem_title" />
 
