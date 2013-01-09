@@ -6,18 +6,24 @@ import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class MeasuringTapeView extends View {
 	private static final int INCH_STEP = 16;
 
 	private Paint mPaint;
+	private Paint mMarkerPaint;
+
 	private float mXdpi;
 
 	private int mWidth;
 	private int mHeight;
 
 	private int mSteps;
+
+	private boolean mIsTouching;
+	private int mMarkerX;
 
 	public MeasuringTapeView(Context context) {
 		this(context, null);
@@ -34,6 +40,11 @@ public class MeasuringTapeView extends View {
 		mPaint.setTextAlign(Align.CENTER);
 		mPaint.setTextSize(displayMetrics.density * 22);
 		mPaint.setStrokeWidth(displayMetrics.density * 2);
+
+		mMarkerPaint = new Paint();
+		mMarkerPaint.setColor(0xFFCC0000);
+		mMarkerPaint.setTextSize(displayMetrics.density * 14);
+		mMarkerPaint.setStrokeWidth(displayMetrics.density * 2);
 	}
 
 	@Override
@@ -44,6 +55,22 @@ public class MeasuringTapeView extends View {
 		mHeight = h;
 
 		mSteps = (int) (mWidth / mXdpi * INCH_STEP);
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if (event.getAction() == MotionEvent.ACTION_DOWN) {
+			mIsTouching = true;
+		}
+		else if (event.getAction() == MotionEvent.ACTION_UP) {
+			mIsTouching = false;
+		}
+
+		mMarkerX = Math.max(0, (int) event.getX());
+
+		invalidate();
+
+		return true;
 	}
 
 	@Override
@@ -70,6 +97,13 @@ public class MeasuringTapeView extends View {
 				String text = String.valueOf(i / INCH_STEP);
 				canvas.drawText(text, x, mHeight / 2, mPaint);
 			}
+		}
+
+		if (mIsTouching) {
+			String text = String.format(" %.2f%n", Math.max(0, mMarkerX / mXdpi));
+
+			canvas.drawLine(mMarkerX, 0, mMarkerX, mHeight, mMarkerPaint);
+			canvas.drawText(text, mMarkerX, -mMarkerPaint.ascent(), mMarkerPaint);
 		}
 	}
 }
