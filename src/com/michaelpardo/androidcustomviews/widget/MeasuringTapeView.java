@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class MeasuringTapeView extends View {
-	private static final int INCH_STEP = 16;
+	private static final int INCH_SEGMENTS = 16;
 
 	private Paint mPaint;
 	private Paint mMarkerPaint;
@@ -20,7 +20,7 @@ public class MeasuringTapeView extends View {
 	private int mWidth;
 	private int mHeight;
 
-	private int mSteps;
+	private int mTotalSegments;
 
 	private boolean mIsTouching;
 	private int mMarkerX;
@@ -54,21 +54,21 @@ public class MeasuringTapeView extends View {
 		mWidth = w;
 		mHeight = h;
 
-		mSteps = (int) (mWidth / mXdpi * INCH_STEP);
+		mTotalSegments = (int) (mWidth / mXdpi * INCH_SEGMENTS);
 	}
 
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
 
-		for (int i = 0; i <= mSteps; i++) {
-			final float x = i * mXdpi / INCH_STEP;
+		for (int i = 0; i <= mTotalSegments; i++) {
+			final float x = i * mXdpi / INCH_SEGMENTS;
 			final float y;
 
-			if (i % INCH_STEP == 0) {
+			if (i % INCH_SEGMENTS == 0) {
 				y = mHeight - mHeight / 3;
 			}
-			else if (i % (INCH_STEP / 2) == 0) {
+			else if (i % (INCH_SEGMENTS / 2) == 0) {
 				y = mHeight - mHeight / 4;
 			}
 			else {
@@ -77,8 +77,8 @@ public class MeasuringTapeView extends View {
 
 			canvas.drawLine(x, y, x, mHeight, mPaint);
 
-			if (i > 0 && i % INCH_STEP == 0) {
-				String text = String.valueOf(i / INCH_STEP);
+			if (i > 0 && i % INCH_SEGMENTS == 0) {
+				String text = String.valueOf(i / INCH_SEGMENTS);
 				canvas.drawText(text, x, mHeight / 2, mPaint);
 			}
 		}
