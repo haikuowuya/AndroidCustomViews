@@ -31,11 +31,11 @@ public class TitledTextView extends LinearLayout {
 		mTitleTextView = new TextView(context);
 		mTitleTextView.setText(title);
 		mTitleTextView.setTypeface(Typeface.DEFAULT_BOLD);
-		addView(mTitleTextView, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		addView(mTitleTextView);
 
 		mBodyTextView = new TextView(context);
 		mBodyTextView.setText(text);
-		addView(mBodyTextView, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+		addView(mBodyTextView);
 	}
 
 	public void setTitle(String title) {
