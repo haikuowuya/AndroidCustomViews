@@ -23,7 +23,7 @@ public class MeasuringTapeView extends View {
 	private int mTotalSegments;
 
 	private boolean mIsTouching;
-	private int mMarkerX;
+	private int mTouchX;
 
 	public MeasuringTapeView(Context context) {
 		this(context, null);
@@ -84,10 +84,10 @@ public class MeasuringTapeView extends View {
 		}
 
 		if (mIsTouching) {
-			String text = String.format(" %.2f%n", Math.max(0, mMarkerX / mXdpi));
+			String text = String.format(" %.2f%n", Math.max(0, mTouchX / mXdpi));
 
-			canvas.drawLine(mMarkerX, 0, mMarkerX, mHeight, mMarkerPaint);
-			canvas.drawText(text, mMarkerX, -mMarkerPaint.ascent(), mMarkerPaint);
+			canvas.drawLine(mTouchX, 0, mTouchX, mHeight, mMarkerPaint);
+			canvas.drawText(text, mTouchX, -mMarkerPaint.ascent(), mMarkerPaint);
 		}
 	}
 
@@ -100,7 +100,7 @@ public class MeasuringTapeView extends View {
 			mIsTouching = false;
 		}
 
-		mMarkerX = Math.max(0, (int) event.getX());
+		mTouchX = Math.max(0, (int) event.getX());
 
 		invalidate();
 
