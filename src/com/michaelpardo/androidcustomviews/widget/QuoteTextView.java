@@ -29,7 +29,11 @@ public class QuoteTextView extends RelativeLayout {
 		mBodyTextView.setText(text);
 	}
 
-	public void setText(String text) {
+	public CharSequence getText() {
+		return mBodyTextView.getText();
+	}
+
+	public void setText(CharSequence text) {
 		mBodyTextView.setText(text);
 	}
 }
