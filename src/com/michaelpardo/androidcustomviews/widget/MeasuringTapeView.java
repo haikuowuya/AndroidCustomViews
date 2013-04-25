@@ -21,8 +21,8 @@ public class MeasuringTapeView extends View {
 	private Paint mPaint;
 	private Paint mMarkerPaint;
 
+	private float mTouchX;
 	private boolean mIsTouching;
-	private int mTouchX;
 
 	public MeasuringTapeView(Context context) {
 		this(context, null);
@@ -91,16 +91,20 @@ public class MeasuringTapeView extends View {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
+		boolean invalidate = false;
 		if (event.getAction() == MotionEvent.ACTION_DOWN) {
 			mIsTouching = true;
 		}
 		else if (event.getAction() == MotionEvent.ACTION_UP) {
 			mIsTouching = false;
+			invalidate = true;
 		}
 
-		mTouchX = Math.max(0, (int) event.getX());
+		mTouchX = Math.max(0, event.getX());
 
-		invalidate();
+		if (mIsTouching || invalidate) {
+			invalidate();
+		}
 
 		return true;
 	}
