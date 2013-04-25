@@ -3,6 +3,7 @@ package com.michaelpardo.androidcustomviews.widget;
 import android.content.Context;
 import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
+import android.view.ViewDebug.ExportedProperty;
 import android.widget.TextView;
 
 public class MarqueeTextView extends TextView {
@@ -15,8 +16,9 @@ public class MarqueeTextView extends TextView {
 	}
 
 	@Override
+	@ExportedProperty(category = "focus")
 	public boolean isFocused() {
-		if (getEllipsize() == TruncateAt.MARQUEE) {
+		if (getEllipsize().equals(TruncateAt.MARQUEE)) {
 			return true;
 		}
 
