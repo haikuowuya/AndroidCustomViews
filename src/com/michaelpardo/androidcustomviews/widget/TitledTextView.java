@@ -29,8 +29,8 @@ public class TitledTextView extends LinearLayout {
 		a.recycle();
 
 		mTitleTextView = new TextView(context);
-		mTitleTextView.setText(title);
 		mTitleTextView.setTypeface(Typeface.DEFAULT_BOLD);
+		mTitleTextView.setText(title);
 		addView(mTitleTextView);
 
 		mBodyTextView = new TextView(context);
@@ -38,11 +38,19 @@ public class TitledTextView extends LinearLayout {
 		addView(mBodyTextView);
 	}
 
-	public void setTitle(String title) {
+	public CharSequence getTitle() {
+		return mTitleTextView.getText();
+	}
+
+	public CharSequence getText() {
+		return mBodyTextView.getText();
+	}
+
+	public void setTitle(CharSequence title) {
 		mTitleTextView.setText(title);
 	}
 
-	public void setText(String text) {
+	public void setText(CharSequence text) {
 		mBodyTextView.setText(text);
 	}
 }
