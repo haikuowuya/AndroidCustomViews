@@ -69,6 +69,9 @@ public class MeasuringTapeView extends View {
 			else if (i % (SEGMENTS_PER_INCH / 2) == 0) {
 				y = mHeight - mHeight / 4;
 			}
+			else if (i % (SEGMENTS_PER_INCH / 4) == 0) {
+				y = mHeight - mHeight / 6;
+			}
 			else {
 				y = mHeight - mHeight / 8;
 			}
@@ -82,7 +85,7 @@ public class MeasuringTapeView extends View {
 		}
 
 		if (mIsTouching) {
-			String text = String.format(" %.2f%n", Math.max(0, mTouchX / mXdpi));
+			String text = String.format(" %.2f%n", mTouchX / mXdpi);
 
 			canvas.drawLine(mTouchX, 0, mTouchX, mHeight, mMarkerPaint);
 			canvas.drawText(text, mTouchX, -mMarkerPaint.ascent(), mMarkerPaint);
