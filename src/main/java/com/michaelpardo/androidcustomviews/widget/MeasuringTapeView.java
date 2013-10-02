@@ -32,7 +32,12 @@ public class MeasuringTapeView extends View {
 		super(context, attrs);
 
 		DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-		mXdpi = displayMetrics.xdpi;
+		// This will not work on many devices. xdpi should be compared to densityDpi
+		// to ensure that the difference falls within an acceptable threshold. If
+		// that threshold is crossed, then the rendering should be deemed inaccurate.
+		// Here we use densityDpi instead of xdpi to render the view properly on
+		// Genymotion devices.
+		mXdpi = displayMetrics.densityDpi;
 
 		mPaint = new Paint();
 		mPaint.setTextAlign(Align.CENTER);
