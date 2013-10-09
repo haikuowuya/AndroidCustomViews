@@ -90,7 +90,7 @@ public class MeasuringTapeView extends View {
 		}
 
 		if (mIsTouching) {
-			String text = String.format(" %.2f%n", mTouchX / mXdpi);
+			String text = String.format(" %.3f%n", mTouchX / mXdpi);
 
 			float textWidth = mMarkerPaint.measureText(text);
 			float textX = mTouchX;
