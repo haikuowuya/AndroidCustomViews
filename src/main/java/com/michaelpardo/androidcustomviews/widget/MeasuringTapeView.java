@@ -92,8 +92,14 @@ public class MeasuringTapeView extends View {
 		if (mIsTouching) {
 			String text = String.format(" %.2f%n", mTouchX / mXdpi);
 
+			float textWidth = mMarkerPaint.measureText(text);
+			float textX = mTouchX;
+			if (mWidth - mTouchX < textWidth) {
+				textX -= textWidth;
+			}
+
 			canvas.drawLine(mTouchX, 0, mTouchX, mHeight, mMarkerPaint);
-			canvas.drawText(text, mTouchX, -mMarkerPaint.ascent(), mMarkerPaint);
+			canvas.drawText(text, textX, -mMarkerPaint.ascent(), mMarkerPaint);
 		}
 	}
 
