@@ -36,9 +36,9 @@
 
         <com.michaelpardo.androidcustomviews.widget.MeasuringTapeView
             android:layout_width="match_parent"
+            android:layout_height="72dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:layout_height="72dp"
             android:background="#F7CA26" />
 
     </LinearLayout>
