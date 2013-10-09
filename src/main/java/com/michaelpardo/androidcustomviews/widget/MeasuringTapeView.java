@@ -106,7 +106,7 @@ public class MeasuringTapeView extends View {
 			mIsTouching = false;
 		}
 
-		mTouchX = Math.max(0, event.getX());
+		mTouchX = Math.max(0, Math.min(mWidth, event.getX()));
 
 		invalidate();
 
