@@ -99,20 +99,16 @@ public class MeasuringTapeView extends View {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		boolean invalidate = false;
 		if (event.getAction() == MotionEvent.ACTION_DOWN) {
 			mIsTouching = true;
 		}
 		else if (event.getAction() == MotionEvent.ACTION_UP) {
 			mIsTouching = false;
-			invalidate = true;
 		}
 
 		mTouchX = Math.max(0, event.getX());
 
-		if (mIsTouching || invalidate) {
-			invalidate();
-		}
+		invalidate();
 
 		return true;
 	}
