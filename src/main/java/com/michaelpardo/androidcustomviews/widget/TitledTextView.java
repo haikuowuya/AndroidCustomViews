@@ -1,13 +1,13 @@
 package com.michaelpardo.androidcustomviews.widget;
 
-import com.michaelpardo.androidcustomviews.R;
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.michaelpardo.androidcustomviews.R;
 
 public class TitledTextView extends LinearLayout {
 	private TextView mTitleTextView;

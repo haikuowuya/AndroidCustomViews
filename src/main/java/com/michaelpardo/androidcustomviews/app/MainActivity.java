@@ -2,6 +2,7 @@ package com.michaelpardo.androidcustomviews.app;
 
 import android.app.Activity;
 import android.os.Bundle;
+
 import com.michaelpardo.androidcustomviews.R;
 
 public class MainActivity extends Activity {
